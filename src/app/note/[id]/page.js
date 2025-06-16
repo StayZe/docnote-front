@@ -54,7 +54,7 @@ export default function NotePage({ params }) {
 
     setShowConfirm(false);
 
-    router.push("/note");
+    router.push("/");
     setTimeout(() => {
       window.location.reload();
     }, 10);
