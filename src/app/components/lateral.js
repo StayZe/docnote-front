@@ -37,8 +37,12 @@ export default function Lateral() {
     await fetch(`http://localhost:8055/items/note/${noteToDelete}`, {
       method: "DELETE",
     });
+
     setNoteToDelete(null);
-    fetchNotes();
+    router.push("/");
+
+    // Optionnel : recharger pour mettre à jour la liste
+    setTimeout(() => window.location.reload(), 10);
   };
 
   return (
