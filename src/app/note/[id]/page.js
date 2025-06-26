@@ -60,8 +60,13 @@ export default function NotePage({ params }) {
     }, 10);
   };
 
-  if (!note) return <div className="p-6">Chargement...</div>;
-
+  useEffect(() => {
+    if (note === null) return; // On attend le fetch
+    if (!note) {
+      router.push("/");
+    }
+  }, [note, router]);
+  
   return (
     <div className="relative p-6">
       {showConfirm && (
